@@ -55,3 +55,12 @@ func NewBundleProps(period types.IPeriod,
 		taxingProps: bundleTaxing }
 }
 
+func EmptyBundleProps(period types.IPeriod) IBundleProps {
+	return bundleProps{ periodProps: period,
+		salaryProps: props.EmptyPropsSalary(),
+		healthProps: props.EmptyPropsHealth(),
+		socialProps: props.EmptyPropsSocial(),
+		taxingProps: props.EmptyPropsTaxing(),
+	}
+}
+

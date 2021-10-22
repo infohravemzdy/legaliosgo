@@ -7,6 +7,7 @@ import (
 
 type IPeriod = types.IPeriod
 type IVersionId = types.IVersionId
+type IBundleProps = factories.IBundleProps
 
 func NewVersionId() IVersionId {
 	return types.NewVersionId()
@@ -26,6 +27,10 @@ func NewPeriodWithCode(code int32) IPeriod {
 
 func NewPeriodWithYearMonth(year int16, month int16) IPeriod {
 	return types.GetPeriodWithYearMonth(year, month)
+}
+
+func EmptyBundleProps(period IPeriod) IBundleProps {
+	return factories.EmptyBundleProps(period)
 }
 
 type IServiceLegalios interface {
