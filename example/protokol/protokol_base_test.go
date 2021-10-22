@@ -12,7 +12,7 @@ import (
 const (
 	PROTOKOL_FOLDER_PATH = "../../../../test_values"
 	PROTOKOL_FOLDER_NAME = "test_values"
-	PARENT_PROTOKOL_FOLDER_NAME = "payrollgo-legalios"
+	PARENT_PROTOKOL_FOLDER_NAME = "legaliosgo"
 )
 
 func createProtokolFile(baseName string, fileName string) (f *os.File, err error) {

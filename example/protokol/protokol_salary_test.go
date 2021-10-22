@@ -3,8 +3,8 @@
 package protokol
 
 import (
-	"github.com/mzdyhrave/payrollgo-legalios/internal/factories"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/props"
+	"github.com/mzdyhrave/legaliosgo/internal/factories"
+	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"testing"
 )
 

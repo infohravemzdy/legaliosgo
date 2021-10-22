@@ -1,7 +1,7 @@
 package period2017
 
 import (
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2016"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2016"
 )
 
 const (

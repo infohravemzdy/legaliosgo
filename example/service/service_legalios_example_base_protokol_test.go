@@ -12,7 +12,7 @@ import (
 const (
 	EXAMPLE_FOLDER_PATH = "../../../../test_expected"
 	EXAMPLE_FOLDER_NAME = "test_expected"
-	PARENT_EXAMPLE_FOLDER_NAME = "payrollgo-legalios"
+	PARENT_EXAMPLE_FOLDER_NAME = "legaliosgo"
 )
 
 func createLoggerFile(baseName string, fileName string) (f *os.File, err error) {

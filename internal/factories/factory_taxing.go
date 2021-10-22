@@ -1,21 +1,21 @@
 package factories
 
 import (
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2011"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2012"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2013"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2014"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2015"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2016"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2017"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2018"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2019"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2020"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2021"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers/period2022"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/props"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/providers"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2011"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2012"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2013"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2014"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2015"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2016"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2017"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2018"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2019"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2020"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2021"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2022"
+	"github.com/mzdyhrave/legaliosgo/internal/props"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
 type IFactoryTaxing interface {

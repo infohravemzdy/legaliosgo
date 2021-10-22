@@ -2,9 +2,9 @@ package period2013
 
 import (
 	. "github.com/shopspring/decimal"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/props"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/providers"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/props"
+	"github.com/mzdyhrave/legaliosgo/internal/providers"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
 type providerSocial2013 struct {

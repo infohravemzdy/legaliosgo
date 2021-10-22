@@ -1,8 +1,8 @@
-package legalios
+package legaliosgo
 
 import (
-	"github.com/mzdyhrave/payrollgo-legalios/internal/factories"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/factories"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
 type IPeriod = types.IPeriod

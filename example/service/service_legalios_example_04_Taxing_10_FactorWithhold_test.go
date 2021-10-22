@@ -1,7 +1,7 @@
 package service
 
 import (
-	service "github.com/mzdyhrave/payrollgo-legalios"
+	service "github.com/mzdyhrave/legaliosgo"
 	. "github.com/shopspring/decimal"
 	"testing"
 )

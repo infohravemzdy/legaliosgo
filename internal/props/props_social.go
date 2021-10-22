@@ -2,7 +2,7 @@ package props
 
 import (
 	. "github.com/shopspring/decimal"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
 type IPropsSocial interface {

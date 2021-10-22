@@ -1,1 +1,1 @@
-﻿# library legalios v0.0.7
+﻿# library legaliosgo v0.0.7

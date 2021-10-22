@@ -1,4 +1,4 @@
-module github.com/mzdyhrave/payrollgo-legalios
+module github.com/mzdyhrave/legaliosgo
 
 go 1.16
 

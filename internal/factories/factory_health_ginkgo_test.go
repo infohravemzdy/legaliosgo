@@ -2,7 +2,7 @@ package factories
 
 import (
 	. "github.com/onsi/ginkgo/extensions/table"
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

@@ -1,4 +1,4 @@
-package legalios
+package legaliosgo
 
 import (
 	"errors"

@@ -1,7 +1,7 @@
 package providers
 
 import (
-	"github.com/mzdyhrave/payrollgo-legalios/internal/types"
+	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
 type VERSION int16
