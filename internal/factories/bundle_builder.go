@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	MIN_VERSION int16 = 2011
+	MIN_VERSION int16 = 2010
 )
 
 type IBundleBuilder interface {

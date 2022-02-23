@@ -3,6 +3,7 @@ package factories
 import (
 	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/providers"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2010"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2011"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2012"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2013"
@@ -69,6 +70,7 @@ func NewFactoryHealth() IFactoryHealth {
 		defaultProvider:   period2022.NewProviderHealth2022(),
 		emptyPeriodProps: props.EmptyPropsHealth(),
 		versions: map[providers.VERSION]providers.IProviderHealth{
+			providers.VERSION(period2010.HEALTH_VERSION_CODE): period2010.NewProviderHealth2010(),
 			providers.VERSION(period2011.HEALTH_VERSION_CODE): period2011.NewProviderHealth2011(),
 			providers.VERSION(period2012.HEALTH_VERSION_CODE): period2012.NewProviderHealth2012(),
 			providers.VERSION(period2013.HEALTH_VERSION_CODE): period2013.NewProviderHealth2013(),

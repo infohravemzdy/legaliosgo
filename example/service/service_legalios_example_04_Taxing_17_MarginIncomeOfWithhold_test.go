@@ -7,6 +7,22 @@ import (
 
 func TestTaxingMarginIncomeOfWithhold(t *testing.T) {
 	testExamples := []testIntScenario{
+		{"2010",
+			[]testIntParams{
+				{ "2010-1", 2010, 1, 2010, 1, 5000 },
+				{ "2010-2", 2010, 2, 2010, 2, 5000 },
+				{ "2010-3", 2010, 3, 2010, 3, 5000 },
+				{ "2010-4", 2010, 4, 2010, 4, 5000 },
+				{ "2010-5", 2010, 5, 2010, 5, 5000 },
+				{ "2010-6", 2010, 6, 2010, 6, 5000 },
+				{ "2010-7", 2010, 7, 2010, 7, 5000 },
+				{ "2010-8", 2010, 8, 2010, 8, 5000 },
+				{ "2010-9", 2010, 9, 2010, 9, 5000 },
+				{ "2010-10", 2010, 10, 2010, 10, 5000 },
+				{ "2010-11", 2010, 11, 2010, 11, 5000 },
+				{ "2010-12", 2010, 12, 2010, 12, 5000 },
+			},
+		},
 		{"2011",
 			[]testIntParams{
 				{ "2011-1", 2011, 1, 2011, 1, 5000 },
@@ -202,7 +218,7 @@ func TestTaxingMarginIncomeOfWithhold(t *testing.T) {
 	}
 
 	// 04_Taxing_16_MarginIncomeOfWithhold
-	logTestIntExamples(t, "04_Taxing_16_MarginIncomeOfWithhold.txt", testExamples)
+	logTestIntExamples(t, "04_Taxing_17_MarginIncomeOfWithhold.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {

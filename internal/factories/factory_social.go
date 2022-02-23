@@ -1,7 +1,9 @@
 package factories
 
 import (
+	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/providers"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2010"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2011"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2012"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2013"
@@ -14,7 +16,6 @@ import (
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2020"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2021"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2022"
-	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
@@ -69,6 +70,7 @@ func NewFactorySocial() IFactorySocial {
 		defaultProvider:   period2022.NewProviderSocial2022(),
 		emptyPeriodProps: props.EmptyPropsSocial(),
 		versions: map[providers.VERSION]providers.IProviderSocial{
+			providers.VERSION(period2010.SOCIAL_VERSION_CODE): period2010.NewProviderSocial2010(),
 			providers.VERSION(period2011.SOCIAL_VERSION_CODE): period2011.NewProviderSocial2011(),
 			providers.VERSION(period2012.SOCIAL_VERSION_CODE): period2012.NewProviderSocial2012(),
 			providers.VERSION(period2013.SOCIAL_VERSION_CODE): period2013.NewProviderSocial2013(),

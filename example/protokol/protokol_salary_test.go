@@ -15,7 +15,7 @@ func TestProtokolSalary_WorkingShiftWeek(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -37,7 +37,7 @@ func TestProtokolSalary_WorkingShiftTime(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -58,7 +58,7 @@ func TestProtokolSalary_MinMonthlyWage(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -79,7 +79,7 @@ func TestProtokolSalary_MinHourlyWage(t *testing.T)  {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {

@@ -2,6 +2,7 @@ package legaliosgo
 
 import (
 	"github.com/mzdyhrave/legaliosgo/internal/factories"
+	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
@@ -27,6 +28,14 @@ func NewPeriodWithCode(code int32) IPeriod {
 
 func NewPeriodWithYearMonth(year int16, month int16) IPeriod {
 	return types.GetPeriodWithYearMonth(year, month)
+}
+
+func NewBundleProps(period types.IPeriod,
+	bundleSalary props.IPropsSalary,
+	bundleHealth props.IPropsHealth,
+	bundleSocial props.IPropsSocial,
+	bundleTaxing props.IPropsTaxing) IBundleProps {
+	return factories.NewBundleProps(period, bundleSalary, bundleHealth, bundleSocial, bundleTaxing)
 }
 
 func EmptyBundleProps(period IPeriod) IBundleProps {

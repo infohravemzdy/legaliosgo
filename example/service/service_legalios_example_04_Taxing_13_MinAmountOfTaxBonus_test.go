@@ -7,6 +7,22 @@ import (
 
 func TestTaxingMinAmountOfTaxBonus(t *testing.T) {
 	testExamples := []testIntScenario{
+		{"2010",
+			[]testIntParams{
+				{ "2010-1", 2010, 1, 2010, 1, 50 },
+				{ "2010-2", 2010, 2, 2010, 2, 50 },
+				{ "2010-3", 2010, 3, 2010, 3, 50 },
+				{ "2010-4", 2010, 4, 2010, 4, 50 },
+				{ "2010-5", 2010, 5, 2010, 5, 50 },
+				{ "2010-6", 2010, 6, 2010, 6, 50 },
+				{ "2010-7", 2010, 7, 2010, 7, 50 },
+				{ "2010-8", 2010, 8, 2010, 8, 50 },
+				{ "2010-9", 2010, 9, 2010, 9, 50 },
+				{ "2010-10", 2010, 10, 2010, 10, 50 },
+				{ "2010-11", 2010, 11, 2010, 11, 50 },
+				{ "2010-12", 2010, 12, 2010, 12, 50 },
+			},
+		},
 		{"2011",
 			[]testIntParams{
 				{ "2011-1", 2011, 1, 2011, 1, 50 },
@@ -202,7 +218,7 @@ func TestTaxingMinAmountOfTaxBonus(t *testing.T) {
 	}
 
 	// 04_Taxing_12_MinAmountOfTaxBonus
-	logTestIntExamples(t, "04_Taxing_12_MinAmountOfTaxBonus.txt", testExamples)
+	logTestIntExamples(t, "04_Taxing_13_MinAmountOfTaxBonus.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {

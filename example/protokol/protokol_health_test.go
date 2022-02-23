@@ -3,9 +3,9 @@
 package protokol
 
 import (
-	. "github.com/shopspring/decimal"
 	"github.com/mzdyhrave/legaliosgo/internal/factories"
 	"github.com/mzdyhrave/legaliosgo/internal/props"
+	. "github.com/shopspring/decimal"
 	"testing"
 )
 
@@ -16,7 +16,7 @@ func TestProtokolHealth_MinMonthlyBasis(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -38,7 +38,7 @@ func TestProtokolHealth_MaxAnnualsBasis(t *testing.T)  {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -60,7 +60,7 @@ func TestProtokolHealth_LimMonthlyState(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -82,7 +82,7 @@ func TestProtokolHealth_LimMonthlyDis50(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -104,7 +104,7 @@ func TestProtokolHealth_FactorCompound(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -126,7 +126,7 @@ func TestProtokolHealth_FactorEmployee(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -148,7 +148,7 @@ func TestProtokolHealth_MarginIncomeEmp(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -170,7 +170,7 @@ func TestProtokolHealth_MarginIncomeAgr(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {

@@ -1,10 +1,10 @@
 package period2011
 
 import (
-	. "github.com/shopspring/decimal"
-	"github.com/mzdyhrave/legaliosgo/internal/providers"
 	"github.com/mzdyhrave/legaliosgo/internal/props"
+	"github.com/mzdyhrave/legaliosgo/internal/providers"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
+	. "github.com/shopspring/decimal"
 )
 
 type providerTaxing2011 struct {
@@ -29,13 +29,15 @@ func (b providerTaxing2011) GetProps(period types.IPeriod) props.IPropsTaxing {
 		b.AllowanceChild3rd(period),
 		b.FactorAdvances(period),
 		b.FactorWithhold(period),
-		b.FactorSolitary(period),
+		b.FactorSolidary(period),
+		b.FactorTaxRate2(period),
 		b.MinAmountOfTaxBonus(period),
 		b.MaxAmountOfTaxBonus(period),
 		b.MarginIncomeOfTaxBonus(period),
 		b.MarginIncomeOfRounding(period),
 		b.MarginIncomeOfWithhold(period),
-		b.MarginIncomeOfSolitary(period),
+		b.MarginIncomeOfSolidary(period),
+		b.MarginIncomeOfTaxRate2(period),
 		b.MarginIncomeOfWthEmp(period),
 		b.MarginIncomeOfWthAgr(period))
 }
@@ -80,8 +82,12 @@ func (b providerTaxing2011) FactorWithhold(period types.IPeriod) Decimal {
 	return NewFromFloat(TAXING_FACTOR_WITHHOLD)
 }
 
-func (b providerTaxing2011) FactorSolitary(period types.IPeriod) Decimal {
-	return NewFromFloat(TAXING_FACTOR_SOLITARY)
+func (b providerTaxing2011) FactorSolidary(period types.IPeriod) Decimal {
+	return NewFromFloat(TAXING_FACTOR_SOLIDARY)
+}
+
+func (b providerTaxing2011) FactorTaxRate2(period types.IPeriod) Decimal {
+	return NewFromFloat(TAXING_FACTOR_TAXRATE2)
 }
 
 func (b providerTaxing2011) MinAmountOfTaxBonus(period types.IPeriod) int32 {
@@ -104,8 +110,12 @@ func (b providerTaxing2011) MarginIncomeOfWithhold(period types.IPeriod) int32 {
 	return TAXING_MARGIN_INCOME_OF_WITHHOLD
 }
 
-func (b providerTaxing2011) MarginIncomeOfSolitary(period types.IPeriod) int32 {
-	return TAXING_MARGIN_INCOME_OF_SOLITARY
+func (b providerTaxing2011) MarginIncomeOfSolidary(period types.IPeriod) int32 {
+	return TAXING_MARGIN_INCOME_OF_SOLIDARY
+}
+
+func (b providerTaxing2011) MarginIncomeOfTaxRate2(period types.IPeriod) int32 {
+	return TAXING_MARGIN_INCOME_OF_TAXRATE2
 }
 
 func (b providerTaxing2011) MarginIncomeOfWthEmp(period types.IPeriod) int32 {

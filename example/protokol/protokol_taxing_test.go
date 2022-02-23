@@ -3,9 +3,9 @@
 package protokol
 
 import (
-	. "github.com/shopspring/decimal"
 	"github.com/mzdyhrave/legaliosgo/internal/factories"
 	"github.com/mzdyhrave/legaliosgo/internal/props"
+	. "github.com/shopspring/decimal"
 	"testing"
 )
 
@@ -16,7 +16,7 @@ func TestProtokolTaxing_AllowancePayer(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -38,7 +38,7 @@ func TestProtokolTaxing_AllowanceDisab1st(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -60,7 +60,7 @@ func TestProtokolTaxing_AllowanceDisab2nd(t *testing.T){
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -82,7 +82,7 @@ func TestProtokolTaxing_AllowanceDisab3rd(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -104,7 +104,7 @@ func TestProtokolTaxing_AllowanceStudy(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -126,7 +126,7 @@ func TestProtokolTaxing_AllowanceChild1st(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -148,7 +148,7 @@ func TestProtokolTaxing_AllowanceChild2nd(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -170,7 +170,7 @@ func TestProtokolTaxing_AllowanceChild3rd(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -192,7 +192,7 @@ func TestProtokolTaxing_FactorAdvances(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -214,7 +214,7 @@ func TestProtokolTaxing_FactorWithhold(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
@@ -229,24 +229,46 @@ func TestProtokolTaxing_FactorWithhold(t *testing.T) {
 	}
 }
 
-func TestProtokolTaxing_FactorSolitary(t *testing.T) {
+func TestProtokolTaxing_FactorSolidary(t *testing.T) {
 	type testScenario struct {
 		title string
 		minYear int16
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_11_FactorSolitary
+			// 04_Taxing_11_FactorSolidary
 			exportTaxingPropsDecFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_11_FactorSolitary.txt",
+				"04_Taxing_11_FactorSolidary.txt",
 				tt.minYear, tt.maxYear, factory,
-				func (prop props.IPropsTaxing) Decimal {return prop.FactorSolitary()})
+				func (prop props.IPropsTaxing) Decimal {return prop.FactorSolidary()})
+		})
+	}
+}
+
+func TestProtokolTaxing_FactorTaxRate2(t *testing.T) {
+	type testScenario struct {
+		title string
+		minYear int16
+		maxYear int16
+	}
+	testExamples := []testScenario {
+		{"2010-2022", 2010, 2022},
+	}
+	for _, tt := range testExamples {
+		t.Run(tt.title, func(t *testing.T) {
+			factory := factories.NewFactoryTaxing()
+
+			// 04_Taxing_12_FactorTaxRate2
+			exportTaxingPropsDecFile(t, PROTOKOL_FOLDER_PATH,
+				"04_Taxing_12_FactorTaxRate2.txt",
+				tt.minYear, tt.maxYear, factory,
+				func (prop props.IPropsTaxing) Decimal {return prop.FactorTaxRate2()})
 		})
 	}
 }
@@ -258,15 +280,15 @@ func TestProtokolTaxing_MinAmountOfTaxBonus(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_12_MinAmountOfTaxBonus
+			// 04_Taxing_13_MinAmountOfTaxBonus
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_12_MinAmountOfTaxBonus.txt",
+				"04_Taxing_13_MinAmountOfTaxBonus.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MinAmountOfTaxBonus()})
 		})
@@ -280,15 +302,15 @@ func TestProtokolTaxing_MaxAmountOfTaxBonus(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_13_MaxAmountOfTaxBonus
+			// 04_Taxing_14_MaxAmountOfTaxBonus
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_13_MaxAmountOfTaxBonus.txt",
+				"04_Taxing_14_MaxAmountOfTaxBonus.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MaxAmountOfTaxBonus()})
 		})
@@ -302,15 +324,15 @@ func TestProtokolTaxing_MarginIncomeOfTaxBonus(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_14_MarginIncomeOfTaxBonus
+			// 04_Taxing_15_MarginIncomeOfTaxBonus
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_14_MarginIncomeOfTaxBonus.txt",
+				"04_Taxing_15_MarginIncomeOfTaxBonus.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfTaxBonus()})
 		})
@@ -324,15 +346,15 @@ func TestProtokolTaxing_MarginIncomeOfRounding(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_15_MarginIncomeOfRounding
+			// 04_Taxing_16_MarginIncomeOfRounding
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_15_MarginIncomeOfRounding.txt",
+				"04_Taxing_16_MarginIncomeOfRounding.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfRounding()})
 		})
@@ -346,39 +368,61 @@ func TestProtokolTaxing_MarginIncomeOfWithhold(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_16_MarginIncomeOfWithhold
+			// 04_Taxing_17_MarginIncomeOfWithhold
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_16_MarginIncomeOfWithhold.txt",
+				"04_Taxing_17_MarginIncomeOfWithhold.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfWithhold()})
 		})
 	}
 }
 
-func TestProtokolTaxing_MarginIncomeOfSolitary(t *testing.T) {
+func TestProtokolTaxing_MarginIncomeOfSolidary(t *testing.T) {
 	type testScenario struct {
 		title string
 		minYear int16
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_17_MarginIncomeOfSolitary
+			// 04_Taxing_18_MarginIncomeOfSolidary
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_17_MarginIncomeOfSolitary.txt",
+				"04_Taxing_18_MarginIncomeOfSolidary.txt",
 				tt.minYear, tt.maxYear, factory,
-				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfSolitary()})
+				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfSolidary()})
+		})
+	}
+}
+
+func TestProtokolTaxing_MarginIncomeOfTaxRate2(t *testing.T) {
+	type testScenario struct {
+		title string
+		minYear int16
+		maxYear int16
+	}
+	testExamples := []testScenario {
+		{"2010-2022", 2010, 2022},
+	}
+	for _, tt := range testExamples {
+		t.Run(tt.title, func(t *testing.T) {
+			factory := factories.NewFactoryTaxing()
+
+			// 04_Taxing_19_MarginIncomeOfTaxRate2
+			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
+				"04_Taxing_19_MarginIncomeOfTaxRate2.txt",
+				tt.minYear, tt.maxYear, factory,
+				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfTaxRate2()})
 		})
 	}
 }
@@ -390,15 +434,15 @@ func TestProtokolTaxing_MarginIncomeOfWthEmp(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_18_MarginIncomeOfWthEmp
+			// 04_Taxing_20_MarginIncomeOfWthEmp
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_18_MarginIncomeOfWthEmp.txt",
+				"04_Taxing_20_MarginIncomeOfWthEmp.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfWthEmp()})
 		})
@@ -412,15 +456,15 @@ func TestProtokolTaxing_MarginIncomeOfWthAgr(t *testing.T) {
 		maxYear int16
 	}
 	testExamples := []testScenario {
-		{"2011-2022", 2011, 2022},
+		{"2010-2022", 2010, 2022},
 	}
 	for _, tt := range testExamples {
 		t.Run(tt.title, func(t *testing.T) {
 			factory := factories.NewFactoryTaxing()
 
-			// 04_Taxing_19_MarginIncomeOfWthAgr
+			// 04_Taxing_21_MarginIncomeOfWthAgr
 			exportTaxingPropsIntFile(t, PROTOKOL_FOLDER_PATH,
-				"04_Taxing_19_MarginIncomeOfWthAgr.txt",
+				"04_Taxing_21_MarginIncomeOfWthAgr.txt",
 				tt.minYear, tt.maxYear, factory,
 				func (prop props.IPropsTaxing) int32 {return prop.MarginIncomeOfWthAgr()})
 		})

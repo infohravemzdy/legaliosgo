@@ -6,8 +6,24 @@ import (
 	"testing"
 )
 
-func TestTaxingFactorSolitary(t *testing.T) {
+func TestTaxingFactorSolidary(t *testing.T) {
 	testExamples := []testDecScenario{
+		{"2010",
+			[]testDecParams{
+				{ "2010-1", 2010, 1, 2010, 1, 0.0 },
+				{ "2010-2", 2010, 2, 2010, 2, 0.0 },
+				{ "2010-3", 2010, 3, 2010, 3, 0.0 },
+				{ "2010-4", 2010, 4, 2010, 4, 0.0 },
+				{ "2010-5", 2010, 5, 2010, 5, 0.0 },
+				{ "2010-6", 2010, 6, 2010, 6, 0.0 },
+				{ "2010-7", 2010, 7, 2010, 7, 0.0 },
+				{ "2010-8", 2010, 8, 2010, 8, 0.0 },
+				{ "2010-9", 2010, 9, 2010, 9, 0.0 },
+				{ "2010-10", 2010, 10, 2010, 10, 0.0 },
+				{ "2010-11", 2010, 11, 2010, 11, 0.0 },
+				{ "2010-12", 2010, 12, 2010, 12, 0.0 },
+			},
+		},
 		{"2011",
 			[]testDecParams{
 				{ "2011-1", 2011, 1, 2011, 1, 0.0 },
@@ -202,8 +218,8 @@ func TestTaxingFactorSolitary(t *testing.T) {
 		},
 	}
 
-	// 04_Taxing_11_FactorSolitary
-	logTestDecExamples(t, "04_Taxing_11_FactorSolitary.txt", testExamples)
+	// 04_Taxing_11_FactorSolidary
+	logTestDecExamples(t, "04_Taxing_11_FactorSolidary.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {
@@ -214,7 +230,7 @@ func TestTaxingFactorSolitary(t *testing.T) {
 
 				tt.testBasicResult(t, bundle, error)
 
-				resultValue := bundle.GetTaxingProps().FactorSolitary()
+				resultValue := bundle.GetTaxingProps().FactorSolidary()
 				resultFloat, _ := resultValue.Float64()
 
 				if false == resultValue.Equal(NewFromFloat(tt.resultValue)) {

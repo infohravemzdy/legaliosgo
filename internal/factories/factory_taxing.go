@@ -1,7 +1,9 @@
 package factories
 
 import (
+	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/providers"
+	"github.com/mzdyhrave/legaliosgo/internal/providers/period2010"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2011"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2012"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2013"
@@ -14,7 +16,6 @@ import (
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2020"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2021"
 	"github.com/mzdyhrave/legaliosgo/internal/providers/period2022"
-	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
 )
 
@@ -69,6 +70,7 @@ func NewFactoryTaxing() IFactoryTaxing {
 		defaultProvider:   period2022.NewProviderTaxing2022(),
 		emptyPeriodProps: props.EmptyPropsTaxing(),
 		versions: map[providers.VERSION]providers.IProviderTaxing{
+			providers.VERSION(period2010.TAXING_VERSION_CODE): period2010.NewProviderTaxing2010(),
 			providers.VERSION(period2011.TAXING_VERSION_CODE): period2011.NewProviderTaxing2011(),
 			providers.VERSION(period2012.TAXING_VERSION_CODE): period2012.NewProviderTaxing2012(),
 			providers.VERSION(period2013.TAXING_VERSION_CODE): period2013.NewProviderTaxing2013(),

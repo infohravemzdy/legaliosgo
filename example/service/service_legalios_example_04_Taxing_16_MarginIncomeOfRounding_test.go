@@ -7,6 +7,22 @@ import (
 
 func TestTaxingMarginIncomeOfRounding(t *testing.T) {
 	testExamples := []testIntScenario{
+		{"2010",
+			[]testIntParams{
+				{ "2010-1", 2010, 1, 2010, 1, 100 },
+				{ "2010-2", 2010, 2, 2010, 2, 100 },
+				{ "2010-3", 2010, 3, 2010, 3, 100 },
+				{ "2010-4", 2010, 4, 2010, 4, 100 },
+				{ "2010-5", 2010, 5, 2010, 5, 100 },
+				{ "2010-6", 2010, 6, 2010, 6, 100 },
+				{ "2010-7", 2010, 7, 2010, 7, 100 },
+				{ "2010-8", 2010, 8, 2010, 8, 100 },
+				{ "2010-9", 2010, 9, 2010, 9, 100 },
+				{ "2010-10", 2010, 10, 2010, 10, 100 },
+				{ "2010-11", 2010, 11, 2010, 11, 100 },
+				{ "2010-12", 2010, 12, 2010, 12, 100 },
+			},
+		},
 		{"2011",
 			[]testIntParams{
 				{ "2011-1", 2011, 1, 2011, 1, 100 },
@@ -202,7 +218,7 @@ func TestTaxingMarginIncomeOfRounding(t *testing.T) {
 	}
 
 	// 04_Taxing_15_MarginIncomeOfRounding
-	logTestIntExamples(t, "04_Taxing_15_MarginIncomeOfRounding.txt", testExamples)
+	logTestIntExamples(t, "04_Taxing_16_MarginIncomeOfRounding.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {

@@ -5,8 +5,24 @@ import (
 	"testing"
 )
 
-func TestTaxingMarginIncomeOfSolitary(t *testing.T) {
+func TestTaxingMarginIncomeOfSolidary(t *testing.T) {
 	testExamples := []testIntScenario{
+		{"2010",
+			[]testIntParams{
+				{ "2010-1", 2010, 1, 2010, 1, 0 },
+				{ "2010-2", 2010, 2, 2010, 2, 0 },
+				{ "2010-3", 2010, 3, 2010, 3, 0 },
+				{ "2010-4", 2010, 4, 2010, 4, 0 },
+				{ "2010-5", 2010, 5, 2010, 5, 0 },
+				{ "2010-6", 2010, 6, 2010, 6, 0 },
+				{ "2010-7", 2010, 7, 2010, 7, 0 },
+				{ "2010-8", 2010, 8, 2010, 8, 0 },
+				{ "2010-9", 2010, 9, 2010, 9, 0 },
+				{ "2010-10", 2010, 10, 2010, 10, 0 },
+				{ "2010-11", 2010, 11, 2010, 11, 0 },
+				{ "2010-12", 2010, 12, 2010, 12, 0 },
+			},
+		},
 		{"2011",
 			[]testIntParams{
 				{ "2011-1", 2011, 1, 2011, 1, 0 },
@@ -201,8 +217,8 @@ func TestTaxingMarginIncomeOfSolitary(t *testing.T) {
 		},
 	}
 
-	// 04_Taxing_17_MarginIncomeOfSolitary
-	logTestIntExamples(t, "04_Taxing_17_MarginIncomeOfSolitary.txt", testExamples)
+	// 04_Taxing_17_MarginIncomeOfSolidary
+	logTestIntExamples(t, "04_Taxing_18_MarginIncomeOfSolidary.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {
@@ -213,7 +229,7 @@ func TestTaxingMarginIncomeOfSolitary(t *testing.T) {
 
 				tt.testBasicResult(t, bundle, error)
 
-				var resultValue = bundle.GetTaxingProps().MarginIncomeOfSolitary()
+				var resultValue = bundle.GetTaxingProps().MarginIncomeOfSolidary()
 				if resultValue != tt.resultValue {
 					t.Errorf("Error getting value from props for period = %d/%d expected: %d; got %d",
 						tt.testYear, tt.testMonth, tt.resultValue, resultValue)

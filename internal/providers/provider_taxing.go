@@ -1,9 +1,9 @@
 package providers
 
 import (
-	. "github.com/shopspring/decimal"
 	"github.com/mzdyhrave/legaliosgo/internal/props"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
+	. "github.com/shopspring/decimal"
 )
 
 type IProviderTaxing interface {
@@ -20,13 +20,15 @@ type IProviderTaxing interface {
 	AllowanceChild3rd(period types.IPeriod) int32
 	FactorAdvances(period types.IPeriod) Decimal
 	FactorWithhold(period types.IPeriod) Decimal
-	FactorSolitary(period types.IPeriod) Decimal
+	FactorSolidary(period types.IPeriod) Decimal
+	FactorTaxRate2(period types.IPeriod) Decimal
 	MinAmountOfTaxBonus(period types.IPeriod) int32
 	MaxAmountOfTaxBonus(period types.IPeriod) int32
 	MarginIncomeOfTaxBonus(period types.IPeriod) int32
 	MarginIncomeOfRounding(period types.IPeriod) int32
 	MarginIncomeOfWithhold(period types.IPeriod) int32
-	MarginIncomeOfSolitary(period types.IPeriod) int32
+	MarginIncomeOfSolidary(period types.IPeriod) int32
+	MarginIncomeOfTaxRate2(period types.IPeriod) int32
 	MarginIncomeOfWthEmp(period types.IPeriod) int32
 	MarginIncomeOfWthAgr(period types.IPeriod) int32
 }

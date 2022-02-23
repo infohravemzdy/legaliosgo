@@ -7,6 +7,22 @@ import (
 
 func TestTaxingMaxAmountOfTaxBonus(t *testing.T) {
 	testExamples := []testIntScenario{
+		{"2010",
+			[]testIntParams{
+				{ "2010-1", 2010, 1, 2010, 1, 4350 },
+				{ "2010-2", 2010, 2, 2010, 2, 4350 },
+				{ "2010-3", 2010, 3, 2010, 3, 4350 },
+				{ "2010-4", 2010, 4, 2010, 4, 4350 },
+				{ "2010-5", 2010, 5, 2010, 5, 4350 },
+				{ "2010-6", 2010, 6, 2010, 6, 4350 },
+				{ "2010-7", 2010, 7, 2010, 7, 4350 },
+				{ "2010-8", 2010, 8, 2010, 8, 4350 },
+				{ "2010-9", 2010, 9, 2010, 9, 4350 },
+				{ "2010-10", 2010, 10, 2010, 10, 4350 },
+				{ "2010-11", 2010, 11, 2010, 11, 4350 },
+				{ "2010-12", 2010, 12, 2010, 12, 4350 },
+			},
+		},
 		{"2011",
 			[]testIntParams{
 				{ "2011-1", 2011, 1, 2011, 1, 4350 },
@@ -202,7 +218,7 @@ func TestTaxingMaxAmountOfTaxBonus(t *testing.T) {
 	}
 
 	// 04_Taxing_13_MaxAmountOfTaxBonus
-	logTestIntExamples(t, "04_Taxing_13_MaxAmountOfTaxBonus.txt", testExamples)
+	logTestIntExamples(t, "04_Taxing_14_MaxAmountOfTaxBonus.txt", testExamples)
 
 	for _, tx := range testExamples {
 		for _, tt := range tx.tests {
