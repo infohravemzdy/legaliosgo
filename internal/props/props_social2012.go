@@ -5,47 +5,47 @@ import (
 	. "github.com/shopspring/decimal"
 )
 
-type PropsSocial struct {
+type PropsSocial2012 struct {
 	propsSocialBase
 }
 
-func (p PropsSocial) MaxAnnualsBasis() int32 {
+func (p PropsSocial2012) MaxAnnualsBasis() int32 {
 	return p.propsSocialBase.MaxAnnualsBasis()
 }
 
-func (p PropsSocial) FactorEmployer() Decimal {
+func (p PropsSocial2012) FactorEmployer() Decimal {
 	return p.propsSocialBase.factorEmployer
 }
 
-func (p PropsSocial) FactorEmployerHigher() Decimal {
+func (p PropsSocial2012) FactorEmployerHigher() Decimal {
 	return p.propsSocialBase.factorEmployerHigher
 }
 
-func (p PropsSocial) FactorEmployee() Decimal {
+func (p PropsSocial2012) FactorEmployee() Decimal {
 	return p.propsSocialBase.factorEmployee
 }
 
-func (p PropsSocial) FactorEmployeeGarant() Decimal {
+func (p PropsSocial2012) FactorEmployeeGarant() Decimal {
 	return p.propsSocialBase.factorEmployeeGarant
 }
 
-func (p PropsSocial) FactorEmployeeReduce() Decimal {
+func (p PropsSocial2012) FactorEmployeeReduce() Decimal {
 	return p.propsSocialBase.factorEmployeeReduce
 }
 
-func (p PropsSocial) MarginIncomeEmp() int32 {
+func (p PropsSocial2012) MarginIncomeEmp() int32 {
 	return p.propsSocialBase.marginIncomeEmp
 }
 
-func (p PropsSocial) MarginIncomeAgr() int32 {
+func (p PropsSocial2012) MarginIncomeAgr() int32 {
 	return p.propsSocialBase.marginIncomeAgr
 }
 
-func (p PropsSocial) ValueEquals(otherSocial IPropsSocial) bool {
+func (p PropsSocial2012) ValueEquals(otherSocial IPropsSocial) bool {
 	return  p.propsSocialBase.ValueEquals(otherSocial)
 }
 
-func (p PropsSocial) HasParticy(term types.WorkSocialTerms, incomeTerm int32, incomeSpec int32) bool {
+func (p PropsSocial2012) HasParticy(term types.WorkSocialTerms, incomeTerm int32, incomeSpec int32) bool {
 	return p.propsSocialBase.HasParticyWithAdapters(term, incomeTerm, incomeSpec,
 		p.hasTermExemptionParticy,
 		p.hasIncomeBasedEmploymentParticy,
@@ -53,22 +53,22 @@ func (p PropsSocial) HasParticy(term types.WorkSocialTerms, incomeTerm int32, in
 		p.hasIncomeCumulatedParticy)
 }
 
-func (p PropsSocial) hasTermExemptionParticy(_term types.WorkSocialTerms) bool {
+func (p PropsSocial2012) hasTermExemptionParticy(_term types.WorkSocialTerms) bool {
 	return false
 }
-func (p PropsSocial) hasIncomeBasedEmploymentParticy(_term types.WorkSocialTerms) bool {
+func (p PropsSocial2012) hasIncomeBasedEmploymentParticy(_term types.WorkSocialTerms) bool {
 	return _term == types.SOCIAL_TERM_SMALLS_EMPL
 
 }
-func (p PropsSocial) hasIncomeBasedAgreementsParticy(_term types.WorkSocialTerms) bool {
+func (p PropsSocial2012) hasIncomeBasedAgreementsParticy(_term types.WorkSocialTerms) bool {
 	return _term == types.SOCIAL_TERM_AGREEM_TASK
 }
-func (p PropsSocial) hasIncomeCumulatedParticy(_term types.WorkSocialTerms) bool {
+func (p PropsSocial2012) hasIncomeCumulatedParticy(_term types.WorkSocialTerms) bool {
 	var particy bool = false
 	switch _term {
 	case types.SOCIAL_TERM_EMPLOYMENTS: particy = false
 	case types.SOCIAL_TERM_AGREEM_TASK: particy = true
-	case types.SOCIAL_TERM_SMALLS_EMPL: particy = true
+	case types.SOCIAL_TERM_SMALLS_EMPL: particy = false
 	case types.SOCIAL_TERM_SHORTS_MEET: particy = false
 	case types.SOCIAL_TERM_SHORTS_DENY: particy = false
 	case types.SOCIAL_TERM_BY_CONTRACT: particy = false
@@ -78,28 +78,28 @@ func (p PropsSocial) hasIncomeCumulatedParticy(_term types.WorkSocialTerms) bool
 	return particy
 }
 
-func (p PropsSocial) RoundedEmployeePaym(basisResult int32) int32 {
+func (p PropsSocial2012) RoundedEmployeePaym(basisResult int32) int32 {
 	factorEmployee := types.Divide(p.FactorEmployee(), NewFromInt32(100))
 	return p.propsSocialBase.intInsuranceRoundUp(types.Multiply(NewFromInt32(basisResult), factorEmployee))
 }
 
-func (p PropsSocial) RoundedEmployerPaym(basisResult int32) int32 {
+func (p PropsSocial2012) RoundedEmployerPaym(basisResult int32) int32 {
 	factorEmployer := types.Divide(p.FactorEmployer(), NewFromInt32(100))
 	return p.propsSocialBase.intInsuranceRoundUp(types.Multiply(NewFromInt32(basisResult), factorEmployer))
 }
 
-func (p PropsSocial) ResultOvercaps(baseSuma int32, overCaps int32) OvercapsResultPair {
+func (p PropsSocial2012) ResultOvercaps(baseSuma int32, overCaps int32) OvercapsResultPair {
 	maxBaseEmployee := max32(0, baseSuma - overCaps)
 	empBaseOvercaps := max32(0, baseSuma - maxBaseEmployee)
 	valBaseOvercaps := max32(0, overCaps - empBaseOvercaps)
 	return OvercapsResultPair {maxBaseEmployee, valBaseOvercaps }
 }
 
-func (p PropsSocial) AnnualsBasisCut(incomeList []ParticySocialTarget, annuityBasis int32) ParticySocialResultTriple {
+func (p PropsSocial2012) AnnualsBasisCut(incomeList []ParticySocialTarget, annuityBasis int32) ParticySocialResultTriple {
 	return p.propsSocialBase.AnnualsBasisCut(incomeList, annuityBasis)
 }
 
-func NewPropsSocial(versionId types.IVersionId,
+func NewPropsSocial2012(versionId types.IVersionId,
 	maxAnnualsBasis int32,
 	factorEmployer Decimal,
 	factorEmployerHigher Decimal,
@@ -108,7 +108,7 @@ func NewPropsSocial(versionId types.IVersionId,
 	factorEmployeeReduce Decimal,
 	marginIncomeEmp int32,
 	marginIncomeAgr int32) IPropsSocial {
-	return PropsSocial{
+	return PropsSocial2012{
 		propsSocialBase: propsSocialBase {
 			propsBase:            propsBase{ Version: versionId },
 			maxAnnualsBasis:      maxAnnualsBasis,
@@ -123,8 +123,8 @@ func NewPropsSocial(versionId types.IVersionId,
 	}
 }
 
-func EmptyPropsSocial() IPropsSocial {
-	return PropsSocial{
+func EmptyPropsSocial2012() IPropsSocial {
+	return PropsSocial2012{
 		propsSocialBase: propsSocialBase {
 			propsBase:            propsBase{ Version: types.GetVersionId(types.VERSION_ZERO) },
 			maxAnnualsBasis:      0,

@@ -1,10 +1,10 @@
 package period2012
 
 import (
-	. "github.com/shopspring/decimal"
-	"github.com/mzdyhrave/legaliosgo/internal/providers"
 	"github.com/mzdyhrave/legaliosgo/internal/props"
+	"github.com/mzdyhrave/legaliosgo/internal/providers"
 	"github.com/mzdyhrave/legaliosgo/internal/types"
+	. "github.com/shopspring/decimal"
 )
 
 type providerHealth2012 struct {
@@ -18,7 +18,7 @@ func NewProviderHealth2012() providers.IProviderHealth {
 }
 
 func (b providerHealth2012) GetProps(period types.IPeriod) props.IPropsHealth {
-	return props.NewPropsHealth(b.Version,
+	return props.NewPropsHealth2012(b.Version,
 		b.MinMonthlyBasis(period),
 		b.MaxAnnualsBasis(period),
 		b.LimMonthlyState(period),

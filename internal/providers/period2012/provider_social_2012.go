@@ -18,7 +18,7 @@ func NewProviderSocial2012() providers.IProviderSocial {
 }
 
 func (b providerSocial2012) GetProps(period types.IPeriod) props.IPropsSocial {
-	return props.NewPropsSocial(b.Version,
+	return props.NewPropsSocial2012(b.Version,
 		b.MaxAnnualsBasis(period),
 		b.FactorEmployer(period),
 		b.FactorEmployerHigher(period),

@@ -18,7 +18,7 @@ func NewProviderTaxing2012() providers.IProviderTaxing {
 }
 
 func (b providerTaxing2012) GetProps(period types.IPeriod) props.IPropsTaxing {
-	return props.NewPropsTaxing(b.Version,
+	return props.NewPropsTaxing2010(b.Version,
 		b.AllowancePayer(period),
 		b.AllowanceDisab1st(period),
 		b.AllowanceDisab2nd(period),

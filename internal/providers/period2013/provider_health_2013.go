@@ -18,7 +18,7 @@ func NewProviderHealth2013() providers.IProviderHealth {
 }
 
 func (b providerHealth2013) GetProps(period types.IPeriod) props.IPropsHealth {
-	return props.NewPropsHealth(b.Version,
+	return props.NewPropsHealth2012(b.Version,
 		b.MinMonthlyBasis(period),
 		b.MaxAnnualsBasis(period),
 		b.LimMonthlyState(period),
