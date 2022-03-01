@@ -7,4 +7,3 @@ require (
 	github.com/onsi/gomega v1.16.0
 	github.com/shopspring/decimal v1.2.0
 )
-
