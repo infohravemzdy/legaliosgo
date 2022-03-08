@@ -5,11 +5,13 @@ import (
 	"time"
 )
 
-var TermBegFinished int16 = 32
-var TermEndFinished int16 = 0
-var WeekmonSunday int16 = 7
-var TimeMultiplySixty int16 = 60
-var WeekdaysCount int16 = 7
+const (
+	TERM_BEG_FINISHED int16 = 32
+	TERM_END_FINISHED int16 = 0
+	WEEKMON_SUNDAY int16 = 7
+	TIME_MULTIPLY_SIXTY int16 = 60
+	WEEKDAYS_COUNT int16 = 7
+)
 
 // Max returns the largest of x or y.
 func max(x, y int16) int16 {
@@ -103,7 +105,7 @@ func DayOfWeekMonToSun(periodDateCwd time.Weekday) int16 {
 	var dayOfWeek int16 = 0;
 	switch periodDateCwd {
 	case time.Sunday:
-		dayOfWeek = WeekmonSunday
+		dayOfWeek = WEEKMON_SUNDAY
 	case time.Monday:
 		dayOfWeek = 1
 	case time.Tuesday:
@@ -137,7 +139,7 @@ func WeekDayOfMonth(period IPeriod, dayOrdinal int16) int16 {
 	return DayOfWeekMonToSun(periodDateCwd)
 }
 func DateFromInPeriod(period IPeriod, dateFrom *time.Time) int16 {
-	var dayTermFrom = TermBegFinished
+	var dayTermFrom = TERM_BEG_FINISHED
 
 	periodDateBeg := NewDate(period.Year(), period.Month(), 1)
 
@@ -152,7 +154,7 @@ func DateFromInPeriod(period IPeriod, dateFrom *time.Time) int16 {
 }
 
 func DateStopInPeriod(period IPeriod, dateEnds *time.Time) int16 {
-	var dayTermEnd = TermEndFinished
+	var dayTermEnd = TERM_END_FINISHED
 
 	daysPeriod := DaysInMonth(period)
 
@@ -168,7 +170,7 @@ func DateStopInPeriod(period IPeriod, dateEnds *time.Time) int16 {
 	return dayTermEnd
 }
 func TimesheetWeekSchedule(period IPeriod, secondsWeekly int32, workdaysWeekly int16) []int32 {
-	secondsDaily := secondsWeekly / int32(min(workdaysWeekly, WeekdaysCount))
+	secondsDaily := secondsWeekly / int32(min(workdaysWeekly, WEEKDAYS_COUNT))
 
 	secRemainder := secondsWeekly - (secondsDaily * int32(workdaysWeekly))
 
